@@ -1,11 +1,11 @@
 import string
-#import createModel
+import createModel
 import importDataset
-#import loadModel
-#import preprocessing
+import loadModel
+import preprocessing
 
 
-from keras.models import Model
+from keras.models import Sequential
 import pandas
 
 height = 64

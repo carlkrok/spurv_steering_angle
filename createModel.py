@@ -1,8 +1,8 @@
 
 from keras.models import Sequential
-from keras.layers import Flatten, Dropout, Dense, ELU
+from keras.layers import Flatten, Dropout, Dense, ELU, Conv2D, MaxPooling2D
 from keras.losses import mean_squared_error
-from keras.optimizers import adam
+from keras.optimizers import Adam
 
 
 def first_go_model(img_height, img_width):
