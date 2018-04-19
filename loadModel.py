@@ -4,7 +4,7 @@ import os
 
 
 
-def save_model(model Model, model_name string):
+def save_model(model, model_name):
 
     # serialize model to JSON
     model_json = model.to_json()
@@ -16,9 +16,11 @@ def save_model(model Model, model_name string):
 
     print("Saved model to disk")
 
+    return;
 
 
-def load_model(model_name string):
+
+def load_model(model_name):
 
     json_file = open(model_name+".json", 'r')
     loaded_model_json = json_file.read()
@@ -31,4 +33,4 @@ def load_model(model_name string):
 
     print("Loaded model from disk")
 
-    return loaded_model
+    return loaded_model;

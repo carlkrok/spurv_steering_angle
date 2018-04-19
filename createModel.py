@@ -1,7 +1,7 @@
 
 from keras.models import Sequential
 from keras.layers import Flatten, Dropout, Dense, ELU
-from keras.losses import mse
+from keras.losses import mean_squared_error
 from keras.optimizers import adam
 
 
@@ -36,11 +36,11 @@ def first_go_model(img_height, img_width):
 
 
     # Compile the model
-    model.compile(loss='mse', optimizer='adam', metrics=['accuracy'])
+    model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
 
 
     # Print model properties
     model.summary()
 
 
-    return model
+    return model;

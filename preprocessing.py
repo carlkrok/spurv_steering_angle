@@ -25,7 +25,7 @@ def np_from_pd(data pd.DataFrame, new_size_row int, new_size_col int):
         np_steering[i_elem] = steer
 
 
-    return np_images, np_steering
+    return np_images, np_steering;
 
 
 def preprocessImage(image, new_size_row, new_size_col):
@@ -34,4 +34,4 @@ def preprocessImage(image, new_size_row, new_size_col):
     image = image[math.floor(shape[0]/4):shape[0]-25, 0:shape[1]]
     image = cv2.resize(image,(new_size_col,new_size_row), interpolation=cv2.INTER_AREA)
     image = image/255.-.5
-    return image
+    return image;

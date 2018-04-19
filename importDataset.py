@@ -24,7 +24,7 @@ def get_dataset_from_folder(dataset_dir, test_set_regex):
     training_set = [x for x in all_files if x not in test_set]
     training_dfs = (pd.read_csv(f) for f in training_set)
     test_dfs = (pd.read_csv(f) for f in test_set)
-    return pd.concat(training_dfs, ignore_index=True), pd.concat(test_dfs, ignore_index=True)
+    return pd.concat(training_dfs, ignore_index=True), pd.concat(test_dfs, ignore_index=True);
 
 
 def load_simulator_data():
@@ -47,4 +47,4 @@ def load_simulator_data():
 
     Print("Length of dataset: ",len(data_files_s))
 
-    return data_files_s
+    return data_files_s;
