@@ -37,7 +37,7 @@ def load_simulator_data():
 
     data_files_s['direction'] = pd.Series('s', index=data_files_s.index)
 
-    data_files_s.columns = ['center', 'left', 'right', 'steer', 'throttle', 'brake', 'speed','direction']
+    data_files_s.columns = ['speed', 'angle', 'image', 'direction']
 
     rev_steer_s = np.array(data_files_s.steer,dtype=np.float32)
 
