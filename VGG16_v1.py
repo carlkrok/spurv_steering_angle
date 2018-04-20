@@ -2,7 +2,7 @@ import os
 from keras.models import Model
 from keras.models import load_model
 from keras.applications.vgg16 import VGG16
-from keras.layers import Flatten, Dense
+from keras.layers import Flatten, Dense, Input
 from keras.losses import mean_squared_error
 from keras.optimizers import Adam
 
