@@ -3,6 +3,8 @@ from keras.models import Model
 from keras.models import load_model
 from keras.applications.vgg16 import VGG16
 from keras.layers import Flatten, Dense
+from keras.losses import mean_squared_error
+from keras.optimizers import Adam
 
 def model_vgg16_v1(nr_of_untrainable_layers):
 
@@ -16,8 +18,8 @@ def model_vgg16_v1(nr_of_untrainable_layers):
             counter += 1
 
     x = Model(inputs=base_model.input, outputs=base_model.output)
-    x.compile(loss=categorical_crossentropy,
-              optimizer=SGD(lr=0.05),
+    x.compile(loss='mean_squared_error',
+              optimizer='adam',
               metrics=['accuracy'])
 
     x = Flatten()(x.output)
@@ -30,8 +32,8 @@ def model_vgg16_v1(nr_of_untrainable_layers):
 
     model = Model(inputs=base_model.input, outputs=predictions)
 
-    model.compile(loss=binary_crossentropy,
-                  optimizer=SGD(lr=0.05),
+    model.compile(loss='mean_squared_error',
+                  optimizer='adam',
                   metrics=['accuracy'])
 
     model.summary()
