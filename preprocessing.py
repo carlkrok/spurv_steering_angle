@@ -13,7 +13,7 @@ def np_from_pd(data, new_size_row, new_size_col):
 
     for i_elem in range(data_size):
 
-        line_data = data.iloc[[i_elem]].reset_index()
+        line_data = data.iloc[i_elem].reset_index()
 
         image = cv2.imread(line_data['image'][0].strip())
         image = preprocessImage(image, new_size_row, new_size_col)

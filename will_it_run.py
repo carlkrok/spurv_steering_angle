@@ -24,7 +24,7 @@ def main():
     pd_dataset = utilityFunctions.importDataset.load_simulator_data()
 
     print("Processing data... Length of data: ", len(pd_dataset))
-    print("Dataset['steer_sm'][0]: ", pd_dataset['steer_sm'][0])
+    print("Dataset['steer_sm'][0]: ", pd_dataset['image'][0].strip())
 
     np_images, np_steering = preprocessing.np_from_pd(pd_dataset, width, height)
 
