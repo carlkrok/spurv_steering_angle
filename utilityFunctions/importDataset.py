@@ -29,7 +29,7 @@ def get_dataset_from_folder(dataset_dir, test_set_regex):
 
 def load_simulator_data():
 
-    csv_path = 'driving_log.csv'
+    csv_path = 'track4-counterclockwise.csv'
 
     data_files_s = pd.read_csv(csv_path,
                              #names=['center','left','right','steering','throttle','break'],

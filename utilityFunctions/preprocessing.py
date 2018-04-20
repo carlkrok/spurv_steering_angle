@@ -30,7 +30,7 @@ def np_from_pd(data, new_size_row, new_size_col):
         #image2, steer2 = randomflip(image, steer)
         #image3 = image
 
-    np.histogram()
+    np.histogram(np_steering)
 
     return np_images, np_steering;
 

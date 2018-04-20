@@ -5,7 +5,6 @@ import utilityFunctions.loadModel
 import utilityFunctions.preprocessing
 import h5py
 
-
 from keras.models import Sequential
 import pandas
 
@@ -17,7 +16,7 @@ def main():
 
     print("Creating model...")
 
-    model = createModel.first_go_model(height, width)
+    model = createModel.VGG16_v1(16)
 
     print("Loading dataset...")
 
