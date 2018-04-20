@@ -17,9 +17,12 @@ def model_vgg16_v1(nr_of_untrainable_layers):
             this_layer.trainable = False
             counter += 1
 
+
+    x = Flatten()(base_model.output)
+'''
     x = Model(inputs=base_model.input, outputs=base_model.output)
     x = Flatten()(x.output)
-
+'''
     '''    x.compile(loss='mean_squared_error',
                   optimizer='adam',
                   metrics=['accuracy'])
