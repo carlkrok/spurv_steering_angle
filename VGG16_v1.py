@@ -9,7 +9,7 @@ def model_vgg16_v1(nr_of_trainable_layers):
     for this_layer in base_model.layers:
         if counter < nr_of_trainable_layers:
             this_layer.trainable = False
-            counter++
+            counter += 1
 
     x = Model(inputs=base_model.input, outputs=base_model.output)
     x.compile(loss=categorical_crossentropy,
@@ -21,7 +21,7 @@ def model_vgg16_v1(nr_of_trainable_layers):
     # Regression part
     fc1 = Dense(100, activation='relu')(x)
     fc2 = Dense(50, activation='relu')(fc1)
-    fc3 = Dense(10, activation='sigmoid')(fc2)
+    fc3 = Dense(10, activation='relu')(fc2)
     predictions = Dense(1)(fc3)
 
     model = Model(inputs=base_model.input, outputs=predictions)
