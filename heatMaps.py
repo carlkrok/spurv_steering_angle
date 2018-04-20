@@ -3,6 +3,8 @@ import numpy as np
 
 from matplotlib import pyplot as plt
 
+from skimage import transform
+import math
 import loadModel
 from keras.preprocessing.image import img_to_array
 from keras.models import load_model
@@ -12,7 +14,14 @@ FRAME_H = 64
 FRAME_W = 64
 
 model = load_model('Really_bad_model/model.h5')
-img = utils.load_img('drunk_driving/IMG/center_2018_04_20_11_50_15_356.jpg', target_size=(FRAME_H, FRAME_W))
+img = utils.load_img('drunk_driving/IMG/center_2018_04_20_11_50_15_356.jpg')
+
+shape = img.shape
+img = img[math.floor(shape[0]/4):shape[0]-25, 0:shape[1]]
+
+target_size=(FRAME_H, FRAME_W)
+img = transform.resize(img, target_size, preserve_range=True).astype('uint8')
+
 plt.figure()
 plt.subplot()
 plt.imshow(img)
