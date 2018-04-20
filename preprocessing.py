@@ -14,13 +14,16 @@ def np_from_pd(data, new_size_row, new_size_col):
     for i_elem in range(data_size):
 
         #line_data = data.iloc[[i_elem]].reset_index()
-        print("Inside preprocessing! imread:", data['image'][i_elem]) #.strip()
-        image = cv2.imread(data['image'][i_elem].strip())
+        #print("Inside preprocessing! imread:", data['image'][i_elem]) #.strip()
+        image = cv2.imread("/home/student/Desktop/Syndata/spurv_steering_angle/"+data['image'][i_elem].strip())
+
+        if image is None:
+            break
 
         image = preprocessImage(image, new_size_row, new_size_col)
         image = np.array(image)
 
-        steer = np.array([[line_data['steer_sm'][0]]])
+        steer = np.array([[data['steer_sm'][0]]])
 
         np_images[i_elem] = image
 
@@ -37,10 +40,10 @@ def np_from_pd(data, new_size_row, new_size_col):
 
 
 def preprocessImage(image, new_size_row, new_size_col):
-    print("Inside process image! Trying to find shape of: ", image)
+    #print("Inside process image! Trying to find shape of: ", image)
     shape = image.shape
     # note: numpy arrays are (row, col)!
-    image = image[math.floor(shape[0]/4):shape[0]-25, 0:shape[1]]
+    image = image[math.floor(shape[0]/4):, 0:shape[1]] #removed shape[0]-25 in row
     image = cv2.resize(image,(new_size_col,new_size_row), interpolation=cv2.INTER_AREA)
     image = image/255.-.5
     return image;
