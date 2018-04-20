@@ -16,7 +16,7 @@ from io import BytesIO
 
 from keras.models import load_model
 
-import utils
+import utilityFunctions/preprocess
 
 sio = socketio.Server()
 app = Flask(__name__)
@@ -47,7 +47,7 @@ def telemetry(sid, data):
 
         try:
             image = np.asarray(image)       # from PIL image to numpy array
-            image = utils.preprocess(image) # apply the preprocessing
+            image = preprocess.preprocessImage(image,64,64) # apply the preprocessing
             image = np.array([image])       # the model expects 4D array
 
             # predict the steering angle for the image
