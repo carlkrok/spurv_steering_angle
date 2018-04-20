@@ -1,4 +1,8 @@
-
+import os
+from keras.models import Model
+from keras.models import load_model
+from keras.applications.vgg16 import VGG16
+from keras.layers import Flatten, Dense
 
 def model_vgg16_v1(nr_of_trainable_layers):
 
