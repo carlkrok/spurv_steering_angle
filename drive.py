@@ -6,10 +6,12 @@ import shutil
 
 import numpy as np
 import socketio
+# USE flask-socketio==1.2
 import eventlet
 import eventlet.wsgi
 from PIL import Image
 from flask import Flask
+# USE flask == 0.6 ???
 from io import BytesIO
 
 from keras.models import load_model
@@ -21,7 +23,7 @@ app = Flask(__name__)
 model = None
 prev_image_array = None
 
-MAX_SPEED = 25
+MAX_SPEED = 15
 MIN_SPEED = 10
 
 speed_limit = MAX_SPEED
@@ -58,7 +60,7 @@ def telemetry(sid, data):
                 speed_limit = MIN_SPEED  # slow down
             else:
                 speed_limit = MAX_SPEED
-            throttle = 1.0 - steering_angle**2 - (speed/speed_limit)**2
+            throttle = 1.0  - (speed/speed_limit)**2 #- steering_angle**2
 
             print('{} {} {}'.format(steering_angle, throttle, speed))
             send_control(steering_angle, throttle)

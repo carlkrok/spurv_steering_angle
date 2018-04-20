@@ -33,7 +33,7 @@ def main():
 
     print("Saving the model...")
 
-    save_model(model, "first_go")
+    save_model(model, "model")
 
     print("Finished!")
 
@@ -48,7 +48,7 @@ def save_model(model, model_name):
         json_file.write(model_json)
 
     # serialize weights to HDF5
-    model.save_weights(model_name+".h5")
+    model.save(model_name+".h5")
 
     print("Saved model to disk")
 
