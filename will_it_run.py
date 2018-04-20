@@ -3,6 +3,7 @@ import createModel
 import importDataset
 import loadModel
 import preprocessing
+import h5py
 
 
 from keras.models import Sequential
@@ -32,20 +33,14 @@ def main():
 
     print("Saving the model...")
 
-    save_model("first_go")
+    save_model(model, "first_go")
 
     print("Finished!")
 
     return 0;
 
 
-
-if __name__== "__main__":
-    main()
-
-
-
-def save_model(model_name):
+def save_model(model, model_name):
 
     # serialize model to JSON
     model_json = model.to_json()
@@ -56,3 +51,8 @@ def save_model(model_name):
     model.save_weights(model_name+".h5")
 
     print("Saved model to disk")
+
+    return;
+
+if __name__== "__main__":
+    main()

@@ -45,6 +45,6 @@ def load_simulator_data():
 
     data_files_s['steer_sm'] = pd.Series(steer_sm_s, index=data_files_s.index)
 
-    Print("Length of dataset: ",len(data_files_s))
+    print("Length of dataset: ",len(data_files_s))
 
     return data_files_s;

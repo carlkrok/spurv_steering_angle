@@ -2,6 +2,7 @@ from keras.models import model_from_json, Model
 import numpy
 import os
 
+'''
 
 
 def save_model(model, model_name):
@@ -9,7 +10,7 @@ def save_model(model, model_name):
     # serialize model to JSON
     model_json = model.to_json()
     with open(model_name+".json", "w") as json_file:
-    json_file.write(model_json)
+       json_file.write(model_json)
 
     # serialize weights to HDF5
     model.save_weights(model_name+".h5")
@@ -18,7 +19,7 @@ def save_model(model, model_name):
 
     return;
 
-
+'''
 
 def load_model(model_name):
 

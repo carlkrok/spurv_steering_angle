@@ -1,8 +1,9 @@
 import pandas as pd
 import numpy as np
 import cv2
+import math
 
-def np_from_pd(data pd.DataFrame, new_size_row int, new_size_col int):
+def np_from_pd(data, new_size_row, new_size_col):
 
     data_size = len(data)
 
