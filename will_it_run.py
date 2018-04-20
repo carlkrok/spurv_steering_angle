@@ -21,11 +21,11 @@ def main():
 
     print("Loading dataset...")
 
-    pd_dataset = importDataset.load_simulator_data()
+    pd_dataset = utilityFunctions.importDataset.load_simulator_data()
 
     print("Processing data...")
 
-    np_images, np_steering = preprocessing.np_from_pd(pd_dataset, width, height)
+    np_images, np_steering = utilityFunctions.preprocessing.np_from_pd(pd_dataset, width, height)
 
     print("Training the model...")
 
