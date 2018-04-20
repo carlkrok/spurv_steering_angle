@@ -4,14 +4,14 @@ from keras.models import load_model
 from keras.applications.vgg16 import VGG16
 from keras.layers import Flatten, Dense
 
-def model_vgg16_v1(nr_of_trainable_layers):
+def model_vgg16_v1(nr_of_untrainable_layers):
 
     base_model = VGG16(weights='imagenet', include_top=False, input_shape=[64, 64, 3], pooling='max')
 
     counter = 0
 
     for this_layer in base_model.layers:
-        if counter < nr_of_trainable_layers:
+        if counter < nr_of_untrainable_layers:
             this_layer.trainable = False
             counter += 1
 
