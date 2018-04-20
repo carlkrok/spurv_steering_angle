@@ -8,7 +8,7 @@ from keras.optimizers import Adam
 
 def model_vgg16_v1(nr_of_untrainable_layers):
 
-    base_model = VGG16(weights='imagenet', include_top=False, input_shape=[64, 64, 3], pooling='max')
+    base_model = VGG16(weights='imagenet', include_top=False, input_shape=(64, 64, 3), pooling='max')
 
     counter = 0
 
@@ -18,10 +18,9 @@ def model_vgg16_v1(nr_of_untrainable_layers):
             counter += 1
 
 
-    x = Flatten()(base_model.output)
 
-    #x = Model(inputs=base_model.input, outputs=base_model.output)
-    #x = Flatten()(x.output)
+    x = Model(inputs=base_model.input, outputs=base_model.output)
+    x = Flatten()(x.output)
 
     #x.compile(loss='mean_squared_error',
     #                  optimizer='adam',
@@ -31,9 +30,9 @@ def model_vgg16_v1(nr_of_untrainable_layers):
     fc1 = Dense(100, activation='relu')(x)
     fc2 = Dense(50, activation='relu')(fc1)
     fc3 = Dense(10, activation='relu')(fc2)
-    predictions = Dense(1)(fc3)
+    prediction = Dense(1)(fc3)
 
-    model = Model(inputs=base_model.input, outputs=predictions)
+    model = Model(inputs=base_model.input, outputs=prediction)
 
     model.compile(loss='mean_squared_error',
                   optimizer='adam',
