@@ -18,10 +18,10 @@ def model_vgg16_v1(nr_of_untrainable_layers):
             counter += 1
 
     x = Model(inputs=base_model.input, outputs=base_model.output)
-    x.compile(loss='mean_squared_error',
+'''    x.compile(loss='mean_squared_error',
               optimizer='adam',
               metrics=['accuracy'])
-
+'''
     x = Flatten()(x.output)
 
     # Regression part
