@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import cv2
 import math
+import matplotlib.pyplot as plt
 
 def np_from_pd(data, new_size_row, new_size_col):
 
@@ -15,16 +16,21 @@ def np_from_pd(data, new_size_row, new_size_col):
         line_data = data.iloc[[i_elem]].reset_index()
 
         image = cv2.imread(line_data['center'][0].strip())
-
         image = preprocessImage(image, new_size_row, new_size_col)
-
         image = np.array(image)
 
         steer = np.array([[line_data['steer_sm'][0]]])
 
         np_images[i_elem] = image
+
         np_steering[i_elem] = steer
 
+        #if steer
+
+        #image2, steer2 = randomflip(image, steer)
+        #image3 = image
+
+    np.histogram()
 
     return np_images, np_steering;
 
