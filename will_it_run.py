@@ -1,8 +1,8 @@
 import string
-import utilityFunctions/createModel
-import utilityFunctions/importDataset
-import utilityFunctions/loadModel
-import utilityFunctions/preprocessing
+import utilityFunctions.createModel
+import utilityFunctions.importDataset
+import utilityFunctions.loadModel
+import utilityFunctions.preprocessing
 import h5py
 
 
