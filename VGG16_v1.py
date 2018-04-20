@@ -26,7 +26,7 @@ def model_vgg16_v1(nr_of_untrainable_layers):
     #                  optimizer='adam',
     #                  metrics=['accuracy'])
 
-    input = Input(64, 64, 3)
+    input = Input(shape=(64, 64, 3))
     vgg16 = VGG16(weights="imagenet", include_top=False)
     for this_layer in vgg16.layers:
         if counter < nr_of_untrainable_layers:
