@@ -22,14 +22,14 @@ def model_vgg16_v1(nr_of_untrainable_layers):
     x = Model(inputs=base_model.input, outputs=base_model.output)
     #
 
-    x.compile(loss='mean_squared_error',
-                      optimizer='adam',
-                      metrics=['accuracy'])
+    #x.compile(loss='mean_squared_error',
+    #                  optimizer='adam',
+    #                  metrics=['accuracy'])
+
+    x = Flatten(input_shape=base_model.output_shape[1:])(x)
+    #x.add(Flatten())
 
 
-    x = Flatten()(x.output)
-
-    
     # Regression part
     fc1 = Dense(100, activation='relu')(x)
     fc2 = Dense(50, activation='relu')(fc1)
