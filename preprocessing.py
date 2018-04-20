@@ -16,7 +16,7 @@ def np_from_pd(data, new_size_row, new_size_col):
         #line_data = data.iloc[[i_elem]].reset_index()
         print("Inside preprocessing! imread:", data['image'][i_elem]) #.strip()
         #image = cv2.imread(data['image'][i_elem].strip())
-        image = cv2.imdecode(data['image'][i_elem], 1)
+        image = cv2.imdecode(np.frombufferdata(['image'][i_elem]), 1)
         image = preprocessImage(image, new_size_row, new_size_col)
         image = np.array(image)
 
