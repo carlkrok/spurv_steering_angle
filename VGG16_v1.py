@@ -45,7 +45,7 @@ def model_vgg16_v1(nr_of_untrainable_layers):
     fc3 = Dense(10, activation='relu')(fc2)
     prediction = Dense(1)(fc3)
 
-    model = Model(inputs=vgg16.input, outputs=prediction)
+    model = Model(inputs=input, outputs=prediction)
 
     model.compile(loss='mean_squared_error',
                   optimizer='adam',
