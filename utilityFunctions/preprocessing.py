@@ -31,6 +31,7 @@ def np_from_pd(data, new_size_row, new_size_col):
         #image3 = image
 
     #np.histogram(np_steering, bins=100)
+    print("Now plotting.. ")
     plt.hist(np_steering, bins=100)
     plt.show()
 

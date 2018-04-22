@@ -30,11 +30,11 @@ def main():
 
     print("Training the model...")
 
-    history = model.fit(np_images, np_steering, epochs=1, batch_size=32)
+    #history = model.fit(np_images, np_steering, epochs=1, batch_size=32)
 
     print("Saving the model...")
 
-    save_model(model, "model")
+    #save_model(model, "model")
 
     print("Finished!")
 
