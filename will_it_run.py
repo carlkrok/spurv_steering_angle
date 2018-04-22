@@ -5,6 +5,7 @@ import utilityFunctions.loadModel
 import preprocessing
 import VGG16_v1_test
 import h5py
+%matplotlib inline
 
 from keras.models import Sequential
 import pandas

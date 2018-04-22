@@ -2,8 +2,9 @@ import pandas as pd
 import numpy as np
 import cv2
 import math
-import matplotlib.pyplot as plt
 %matplotlib inline
+import matplotlib.pyplot as plt
+
 
 def np_from_pd(data, new_size_row, new_size_col, test_var):
 
@@ -35,7 +36,8 @@ def np_from_pd(data, new_size_row, new_size_col, test_var):
 
     #np.histogram(np_steering, bins=100)
     print("Now plotting.. ")
-    plt.bar(np.arange(len(np_steering)),np_steering)
+    #plt.bar(np.arange(len(np_steering)),np_steering)
+    plot.hist(np.steering_angle, bins=100)
     plt.show()
 
     return np_images, np_steering;
