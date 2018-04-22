@@ -34,12 +34,10 @@ def np_from_pd(data, new_size_row, new_size_col, test_var):
 
     #np.histogram(np_steering, bins=100)
     print("Now plotting.. ")
-    plt.hist(np_steering, bins=100)
+    plt.bar(np.arange(len(np_steering)),np_steering)
     plt.show()
 
-    test_var = 0
-
-    return np_images, np_steering, test_var;
+    return np_images, np_steering;
 
 
 def preprocessImage(image, new_size_row, new_size_col):
