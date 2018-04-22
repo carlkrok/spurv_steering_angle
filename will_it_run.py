@@ -28,7 +28,7 @@ def main():
 
     test_var = 1
 
-    while test_var {
+    while test_var == 1 {
         np_images, np_steering, test_var = preprocessing.np_from_pd(pd_dataset, width, height, test_var)
     }
 
