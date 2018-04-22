@@ -3,8 +3,11 @@ import utilityFunctions.createModel
 import utilityFunctions.importDataset
 import utilityFunctions.loadModel
 import preprocessing
-import VGG16_v1
+import VGG16_v1_test
 import h5py
+import matplotlib.pyplot as plt
+from IPython import get_ipython
+get_ipython().run_line_magic('matplotlib', 'inline')
 
 from keras.models import Sequential
 import pandas
@@ -17,7 +20,7 @@ def main():
 
     print("Creating model...")
 
-    model = VGG16_v1.model_vgg16_v1(16)
+    model = VGG16_v1_test.model_vgg16_v1(16)
 
     print("Loading dataset...")
 
@@ -26,15 +29,19 @@ def main():
     print("Processing data... Length of data: ", len(pd_dataset))
     print("Dataset['steer_sm'][0]: ", pd_dataset['image'][0].strip())
 
+
     np_images, np_steering = preprocessing.np_from_pd(pd_dataset, width, height)
+
+    plt.hist(np_steering, bins=100)
+    plt.show()
 
     print("Training the model...")
 
-    history = model.fit(np_images, np_steering, epochs=1, batch_size=32)
+    #history = model.fit(np_images, np_steering, epochs=1, batch_size=32)
 
     print("Saving the model...")
 
-    save_model(model, "model")
+    #save_model(model, "model")
 
     print("Finished!")
 
