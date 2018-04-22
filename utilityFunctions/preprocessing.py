@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 import cv2
 import math
-%matplotlib inline
 import matplotlib.pyplot as plt
+%matplotlib
 
 
 def np_from_pd(data, new_size_row, new_size_col, test_var):
