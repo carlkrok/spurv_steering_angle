@@ -3,7 +3,8 @@ import numpy as np
 import cv2
 import math
 import matplotlib.pyplot as plt
-%matplotlib inline
+from IPython import get_ipython
+get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 def np_from_pd(data, new_size_row, new_size_col, test_var):
