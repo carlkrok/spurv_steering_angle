@@ -8,15 +8,15 @@ from keras.optimizers import Adam
 
 def model_vgg16_v1(nr_of_untrainable_layers):
 
-    input_tensor = Input(shape=(128, 128, 3))
+    #input_tensor = Input(shape=(128, 128, 3))
 
-    #base_model = VGG16(weights='imagenet', include_top=False, input_tensor=input_tensor, pooling='max')
-    model = applications.VGG16(weights='imagenet', include_top=False)
+    base_model = VGG16(weights='imagenet', include_top=False, input_tensor=input_tensor, pooling='max')
+    #model = applications.VGG16(weights='imagenet', include_top=False)
     print('Model loaded.')
 
-# build a classifier model to put on top of the convolutional model
-    top_model = Sequential()
-    top_model.add(Flatten(input_shape=model.output_shape[1:]))
+    # build a classifier model to put on top of the convolutional model
+    #top_model = Sequential()
+    #top_model.add(Flatten(input_shape=model.output_shape[1:]))
     #counter2 = 0
 
     #new_model = Sequential()
@@ -38,7 +38,7 @@ def model_vgg16_v1(nr_of_untrainable_layers):
     #                  optimizer='adam',
     #                  metrics=['accuracy'])
 
-    #input = Input(shape=(64, 64, 3))
+    input = Input(shape=(64, 64, 3))
 
     #vgg16 = VGG16(weights="imagenet", include_top=False)
 
@@ -47,23 +47,23 @@ def model_vgg16_v1(nr_of_untrainable_layers):
     #        this_layer.trainable = False
     #        counter += 1
 
-    #x = vgg16(input)
+    x = base_model(input)
     #x = Flatten()(base_model.output)
     #base_model.add(Flatten())
     #x = Flatten(input_shape=base_model.output_shape[1:])(x)
-    #x.add(Flatten())
+    x.add(Flatten())
 
-    top_model = Sequential()
-    top_model.add(Flatten(input_shape=model.output_shape))
+    #top_model = Sequential()
+    #top_model.add(Flatten(input_shape=model.output_shape))
 
 
     # Regression part
-    fc1 = Dense(100, activation='relu')(top_model)
+    fc1 = Dense(100, activation='relu')(x)
     fc2 = Dense(50, activation='relu')(fc1)
     fc3 = Dense(10, activation='relu')(fc2)
     prediction = Dense(1)(fc3)
 
-    new_model.add(prediction)
+    #new_model.add(prediction)
 
     model = Model(inputs=model.input, outputs=prediction)
 
