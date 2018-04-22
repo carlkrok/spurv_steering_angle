@@ -27,7 +27,7 @@ def main():
     print("Dataset['steer_sm'][0]: ", pd_dataset['image'][0].strip())
 
 
-    np_images, np_steering, test_var = preprocessing.np_from_pd(pd_dataset, width, height)
+    np_images, np_steering = preprocessing.np_from_pd(pd_dataset, width, height)
 
 
 
