@@ -26,7 +26,12 @@ def main():
     print("Processing data... Length of data: ", len(pd_dataset))
     print("Dataset['steer_sm'][0]: ", pd_dataset['image'][0].strip())
 
-    np_images, np_steering = preprocessing.np_from_pd(pd_dataset, width, height)
+    test_var = 1
+
+    while test_var {
+        np_images, np_steering, test_var = preprocessing.np_from_pd(pd_dataset, width, height, test_var)
+    }
+
 
     print("Training the model...")
 

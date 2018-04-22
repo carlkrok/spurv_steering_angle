@@ -4,12 +4,12 @@ import cv2
 import math
 import matplotlib.pyplot as plt
 
-def np_from_pd(data, new_size_row, new_size_col):
+def np_from_pd(data, new_size_row, new_size_col, test_var):
 
     print("---- In np_from_pd ----")
 
     data_size = len(data)
-
+    print("Data size of received dataset: " data_size)
     np_images = np.zeros((data_size, new_size_row, new_size_col, 3))
     np_steering = np.zeros(data_size)
 
@@ -37,7 +37,9 @@ def np_from_pd(data, new_size_row, new_size_col):
     plt.hist(np_steering, bins=100)
     plt.show()
 
-    return np_images, np_steering;
+    test_var = 0
+
+    return np_images, np_steering, test_var;
 
 
 def preprocessImage(image, new_size_row, new_size_col):
