@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 
 def np_from_pd(data, new_size_row, new_size_col):
 
+    print("---- In np_from_pd ----")
+
     data_size = len(data)
 
     np_images = np.zeros((data_size, new_size_row, new_size_col, 3))
