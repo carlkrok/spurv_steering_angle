@@ -5,7 +5,7 @@ import os
 import shutil
 
 import numpy as np
-import socketio
+#import socketio
 import eventlet
 import eventlet.wsgi
 from PIL import Image
