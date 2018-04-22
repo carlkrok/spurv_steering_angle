@@ -17,7 +17,7 @@ def main():
 
     print("Creating model...")
 
-    model = VGG16_v1.model_vgg16_v1(16)
+    model = VGG16_v1_test.model_vgg16_v1(16)
 
     print("Loading dataset...")
 
