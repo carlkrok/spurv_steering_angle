@@ -10,8 +10,8 @@ def model_vgg16_v1(nr_of_untrainable_layers):
 
     #input_tensor = Input(shape=(128, 128, 3))
 
-    base_model = VGG16(weights='imagenet', include_top=False, input_tensor=input_tensor, pooling='max')
-    #model = applications.VGG16(weights='imagenet', include_top=False)
+    #base_model = VGG16(weights='imagenet', include_top=False, input_tensor=input_tensor, pooling='max')
+    base_model = applications.VGG16(weights='imagenet', include_top=False)
     print('Model loaded.')
 
     # build a classifier model to put on top of the convolutional model
