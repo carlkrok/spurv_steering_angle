@@ -5,7 +5,8 @@ import utilityFunctions.loadModel
 import preprocessing
 import VGG16_v1_test
 import h5py
-import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('Agg')
 
 from keras.models import Sequential
 import pandas
@@ -15,6 +16,7 @@ width = 64
 
 
 def main():
+
 
     print("Creating model...")
 
@@ -29,9 +31,6 @@ def main():
 
 
     np_images, np_steering = preprocessing.np_from_pd(pd_dataset, width, height)
-
-    plt.hist(np_steering, bins=100)
-    plt.show()
 
     print("Training the model...")
 

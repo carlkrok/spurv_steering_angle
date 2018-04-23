@@ -5,6 +5,8 @@ from keras.applications.vgg16 import VGG16
 from keras.layers import Flatten, Dense, Input
 from keras.losses import mean_squared_error
 from keras.optimizers import Adam
+import matplotlib.pyplot as plt
+
 
 def model_vgg16_v1(nr_of_untrainable_layers):
 
