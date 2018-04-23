@@ -48,10 +48,10 @@ def model_vgg16_v1(nr_of_untrainable_layers):
     #        counter += 1
 
     x = base_model(input)
-    #x = Flatten()(base_model.output)
+    x = Flatten()(x)
     #base_model.add(Flatten())
     #x = Flatten(input_shape=base_model.output_shape[1:])(x)
-    x.add(Flatten())
+    #x.add(Flatten())
 
     #top_model = Sequential()
     #top_model.add(Flatten(input_shape=model.output_shape))
