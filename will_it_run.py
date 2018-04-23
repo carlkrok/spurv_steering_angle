@@ -6,7 +6,7 @@ import preprocessing
 import VGG16_v1_test
 import h5py
 import matplotlib
-matplotlib.use('Agg')
+
 
 from keras.models import Sequential
 import pandas
@@ -16,7 +16,7 @@ width = 64
 
 
 def main():
-
+    matplotlib.use('Agg')
 
     print("Creating model...")
 
