@@ -40,7 +40,8 @@ def np_from_pd(data, new_size_row, new_size_col, test_var):
     print("Now plotting.. ")
     #plt.bar(np.arange(len(np_steering)),np_steering)
     plt.hist(np_steering, bins=100)
-    plt.show()
+
+    #plt.show()
 
     return np_images, np_steering;
 
