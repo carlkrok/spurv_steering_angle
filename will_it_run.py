@@ -6,8 +6,6 @@ import preprocessing
 import VGG16_v1_test
 import h5py
 import matplotlib.pyplot as plt
-from IPython import get_ipython
-get_ipython().run_line_magic('matplotlib', 'inline')
 
 from keras.models import Sequential
 import pandas
