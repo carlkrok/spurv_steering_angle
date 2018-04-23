@@ -101,7 +101,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-.Docerfile.swo
+.Dockerfile.swo
 .Dockerfile.swp
 __pycache__/
+
 # End of https://www.gitignore.io/api/python
